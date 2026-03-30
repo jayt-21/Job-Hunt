@@ -97,7 +97,6 @@ npm run test:watch
 
 ## Full Documentation
 
-- See `explanation.txt` in root for complete documentation
 - See `backend/README.md` for backend details
 - See `frontend/README.md` for frontend details
 
@@ -165,15 +164,14 @@ lsof -ti:3000 | xargs kill -9
 **JWT Token**: Sent in header as `Authorization: Bearer {token}`
 **ATS Score**: 0-100 match percentage of resume to job description
 **Status Tracking**: Applied → Interview → Rejected/Offer
-**Resume Analysis**: Keyword matching algorithm (see explanation.txt)
+**Resume Analysis**: Keyword matching algorithm
 
 ## Need Help?
 
 1. Check error messages in browser console
 2. Check server logs in terminal
-3. Read explanation.txt for architecture details
-4. Review README.md in backend/frontend folders
-5. Check test files for usage examples
+3. Review README.md in backend/frontend folders
+4. Check test files for usage examples
 
 ---
 

@@ -5,6 +5,20 @@ import LoginHistory from '../components/LoginHistory';
 
 const SecuritySettings = () => {
   const [expandedSection, setExpandedSection] = useState('sessions');
+  const colorClasses = {
+    blue: {
+      activeCard: 'border-blue-500 bg-blue-50',
+      icon: 'text-blue-600',
+    },
+    green: {
+      activeCard: 'border-green-500 bg-green-50',
+      icon: 'text-green-600',
+    },
+    purple: {
+      activeCard: 'border-purple-500 bg-purple-50',
+      icon: 'text-purple-600',
+    },
+  };
 
   const sections = [
     {
@@ -55,12 +69,12 @@ const SecuritySettings = () => {
               key={section.id}
               className={`p-4 rounded-lg border-2 cursor-pointer transition hover:shadow-lg ${
                 expandedSection === section.id
-                  ? `border-${section.color}-500 bg-${section.color}-50`
+                  ? colorClasses[section.color].activeCard
                   : 'border-gray-200 bg-white'
               }`}
               onClick={() => toggleSection(section.id)}
             >
-              <div className={`text-${section.color}-600 mb-3`}>
+              <div className={`${colorClasses[section.color].icon} mb-3`}>
                 {section.icon}
               </div>
               <h3 className="font-semibold text-gray-900">{section.title}</h3>

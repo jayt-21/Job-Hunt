@@ -73,7 +73,6 @@ npm run dev
 
 | Document | Purpose |
 |----------|---------|
-| [explanation.txt](./explanation.txt) | **Comprehensive project documentation** |
 | [QUICK_START.md](./QUICK_START.md) | **60-second setup guide** |
 | [backend/README.md](./backend/README.md) | Backend API & architecture |
 | [frontend/README.md](./frontend/README.md) | Frontend setup & components |
@@ -155,7 +154,6 @@ job_search/
 │   ├── tailwind.config.js
 │   └── package.json
 │
-├── explanation.txt            # Full documentation
 ├── QUICK_START.md            # Setup guide
 └── README.md                 # This file
 ```
@@ -231,8 +229,6 @@ Test coverage includes:
 | **Context API** | Simpler than Redux, sufficient for this app |
 | **Tailwind CSS** | Faster development, smaller bundle |
 
-See [explanation.txt](./explanation.txt) for detailed architecture explanation.
-
 ## Analytics Example
 
 Dashboard shows:
@@ -289,8 +285,6 @@ npm run build
 - [ ] Salary tracking
 - [ ] ML-based scoring
 
-See [explanation.txt](./explanation.txt) for complete roadmap.
-
 ## Troubleshooting
 
 **Issue**: Backend won't start
@@ -342,10 +336,9 @@ MIT License - Feel free to use for personal or commercial projects
 
 ## Support
 
-1. Check [explanation.txt](./explanation.txt) for architecture details
-2. Review README.md in backend/ or frontend/
-3. Check test files for usage examples
-4. Review API documentation above
+1. Review README.md in backend/ or frontend/
+2. Check test files for usage examples
+3. Review API documentation above
 
 ## Highlights
 
