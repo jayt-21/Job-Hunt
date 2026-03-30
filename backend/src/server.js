@@ -1,6 +1,8 @@
 require('dotenv').config();
+const fs = require('fs');
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const connectDB = require('./config/database');
 const errorHandler = require('./middleware/errorHandler');
 const authRoutes = require('./routes/authRoutes');
@@ -8,6 +10,7 @@ const jobRoutes = require('./routes/jobRoutes');
 const resumeRoutes = require('./routes/resumeRoutes');
 
 const app = express();
+const frontendDistPath = path.resolve(__dirname, '..', '..', 'frontend', 'dist');
 
 // Middleware
 app.use(express.json());
@@ -31,8 +34,21 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({ success: true, message: 'Server is running' });
 });
 
-// 404 handler
-app.use((req, res) => {
+// Serve the built frontend from the same service when the build output exists.
+if (fs.existsSync(frontendDistPath)) {
+  app.use(express.static(frontendDistPath));
+
+  app.get(/^\/(?!api).*/, (req, res, next) => {
+    res.sendFile(path.join(frontendDistPath, 'index.html'), (error) => {
+      if (error) {
+        next(error);
+      }
+    });
+  });
+}
+
+// API 404 handler
+app.use('/api', (req, res) => {
   res.status(404).json({ success: false, message: 'Route not found' });
 });
 
